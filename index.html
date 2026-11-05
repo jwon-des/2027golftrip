@@ -7,29 +7,46 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/nav.css">
 </head>
 <body>
-  <div class="phone">
-    <header class="top">
+  <header class="top">
       <a class="mark" href="index.html">BEND 27</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-    </header>
-    <nav id="site-nav" class="nav-drawer" hidden aria-label="Trip">
-      <a href="overview.html">Overview</a>
-      <a href="friday.html">Friday</a>
-      <a href="saturday.html">Saturday</a>
-      <a href="sunday.html">Sunday</a>
-      <a href="monday.html">Monday</a>
-    </nav>
+      <div class="nav-actions">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav id="site-nav" class="nav-menu" hidden aria-label="Trip">
+          <a href="overview.html">
+            <span class="nav-kicker">Trip</span>
+            Overview
+          </a>
+          <a href="friday.html">
+            <span class="nav-kicker">June 25</span>
+            Friday
+          </a>
+          <a href="saturday.html">
+            <span class="nav-kicker">June 26</span>
+            Saturday
+          </a>
+          <a href="sunday.html">
+            <span class="nav-kicker">June 27</span>
+            Sunday
+          </a>
+          <a href="monday.html">
+            <span class="nav-kicker">June 28</span>
+            Monday
+          </a>
+        </nav>
+      </div>
+  </header>
+  <div class="phone">
     <main>
       <img class="landing-logo" src="images/Bend_Logo.png" alt="Bend 27">
       <p class="text-secondary">Bend, June 25–28, 2027</p>
       <section class="countdown" aria-live="polite">
-        <p class="countdown-kicker">Check-in</p>
         <div class="countdown-grid">
           <div class="countdown-unit"><span class="countdown-value" data-unit="days">00</span><span class="countdown-label">Days</span></div>
           <div class="countdown-unit"><span class="countdown-value" data-unit="hours">00</span><span class="countdown-label">Hours</span></div>

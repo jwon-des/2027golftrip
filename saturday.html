@@ -7,24 +7,42 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/nav.css">
 </head>
 <body>
-  <div class="phone">
-    <header class="top">
+  <header class="top">
       <a class="mark" href="index.html">BEND 27</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-    </header>
-    <nav id="site-nav" class="nav-drawer" hidden aria-label="Trip">
-      <a href="overview.html">Overview</a>
-      <a href="friday.html">Friday</a>
-      <a href="saturday.html" aria-current="page">Saturday</a>
-      <a href="sunday.html">Sunday</a>
-      <a href="monday.html">Monday</a>
-    </nav>
+      <div class="nav-actions">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav id="site-nav" class="nav-menu" hidden aria-label="Trip">
+          <a href="overview.html">
+            <span class="nav-kicker">Trip</span>
+            Overview
+          </a>
+          <a href="friday.html">
+            <span class="nav-kicker">June 25</span>
+            Friday
+          </a>
+          <a href="saturday.html" aria-current="page">
+            <span class="nav-kicker">June 26</span>
+            Saturday
+          </a>
+          <a href="sunday.html">
+            <span class="nav-kicker">June 27</span>
+            Sunday
+          </a>
+          <a href="monday.html">
+            <span class="nav-kicker">June 28</span>
+            Monday
+          </a>
+        </nav>
+      </div>
+  </header>
+  <div class="phone">
     <main>
       <p class="kicker">Saturday, June 26</p>
 
@@ -40,13 +58,13 @@
         </div>
         <article class="card">
           <p class="tag">FORMAT</p>
-          <h3>Round 1 : 2 Man Best Ball</h3>
+          <h3>Round 1 : <span class="round-name">2 Man Best Ball</span></h3>
           <p>All play own ball | Course handicap<br>Hole-by-hole match play</p>
         </article>
         <article class="card">
-          <p>Team scoring: each hole, the best net score from each team wins the hole. 18-hole match play (win 1 pt | tie 0.5 pt each).</p>
-          <p>Individual scoring: lowest total net = 1 pt, 2nd lowest = 0.5 pt.</p>
-          <p>Round pairings: shared with the group each morning.</p>
+          <p><span class="lead">Team scoring:</span> each hole, the best net score from each team wins the hole. 18-hole match play (win 1 pt | tie 0.5 pt each).</p>
+          <p><span class="lead">Individual scoring:</span> lowest total net = 1 pt, 2nd lowest = 0.5 pt.</p>
+          <p><span class="lead">Round pairings:</span> shared with the group each morning.</p>
         </article>
         <h2>Course Info</h2>
         <div class="facts">
@@ -72,13 +90,13 @@
         </div>
         <article class="card">
           <p class="tag">FORMAT</p>
-          <h3>Round 2 : 2 Man Scramble</h3>
+          <h3>Round 2 : <span class="round-name">2 Man Scramble</span></h3>
           <p>All play own ball | No handicap | Total gross</p>
         </article>
         <article class="card">
-          <p>Team scoring: all players hit, choose the best shot each time until the hole is finished. Lowest scoring team wins (win 1 pt | tie 0.5 pt each).</p>
-          <p>Individual scoring: win 1 pt | tie 0.5 pt each.</p>
-          <p>Round pairings: shared with the group each morning.</p>
+          <p><span class="lead">Team scoring:</span> all players hit, choose the best shot each time until the hole is finished. Lowest scoring team wins (win 1 pt | tie 0.5 pt each).</p>
+          <p><span class="lead">Individual scoring:</span> win 1 pt | tie 0.5 pt each.</p>
+          <p><span class="lead">Round pairings:</span> shared with the group each morning.</p>
         </article>
         <h2>Course Info</h2>
         <div class="facts">

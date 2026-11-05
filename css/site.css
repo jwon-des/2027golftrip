@@ -19,23 +19,26 @@
 
 html, body {
   margin: 0;
-  background: var(--canvas);
+  background: var(--bg);
   color: var(--text);
   font-family: var(--font);
 }
 
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a { color: inherit; }
 
 .phone {
-  width: min(100%, var(--page));
-  min-height: 100vh;
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
   background: var(--bg);
-  padding: 20px 20px 28px;
+  padding: 20px 16px 40px;
 }
 
 .top {
@@ -101,50 +104,9 @@ a { color: inherit; }
 }
 
 .nav-toggle:focus-visible,
-.nav-drawer a:focus-visible,
 .landing-cta:focus-visible {
   outline: 2px solid var(--label);
   outline-offset: 2px;
-}
-
-.nav-drawer {
-  display: flex;
-  flex-direction: column;
-  width: min(100%, var(--page));
-  margin: 10px 0 0;
-  padding: 6px 0 2px;
-  background: var(--bg);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.top > .nav-drawer {
-  flex: 0 0 100%;
-}
-
-.nav-drawer[hidden] {
-  display: none !important;
-}
-
-.nav-drawer a {
-  display: block;
-  padding: 12px 2px;
-  color: var(--text-secondary);
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-}
-
-.nav-drawer a[aria-current="page"] {
-  color: var(--label);
-}
-
-.top:has(+ .nav-drawer:not([hidden])) {
-  margin-bottom: 0;
-}
-
-.phone > .nav-drawer:not([hidden]) {
-  margin-bottom: 22px;
 }
 
 .text-secondary { color: var(--text-secondary); }
@@ -200,6 +162,10 @@ h2 {
   color: var(--label);
   font-size: 12px;
   letter-spacing: 0.02em;
+}
+
+.card h3 .round-name {
+  color: var(--text);
 }
 
 .card p,
@@ -275,7 +241,8 @@ h2 {
   top: 50%;
   z-index: 1;
   transform: translateY(-50%);
-  font-size: 52px;
+  text-align: center;
+  font-size: clamp(40px, 7vw, 72px);
   line-height: 0.95;
   letter-spacing: -0.03em;
 }
@@ -312,13 +279,13 @@ h2 {
   white-space: nowrap;
 }
 
-.players { display: grid; gap: 16px; margin-top: 8px; }
+.players { display: grid; gap: 8px; margin-top: 8px; }
 
 .player {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -348,6 +315,22 @@ h2 {
 
 .group-label {
   margin: 14px 0 4px;
+  color: var(--text);
+}
+
+.card p .lead {
+  color: var(--text);
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--label);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .recs { margin: 0; padding-left: 18px; }
@@ -389,9 +372,12 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-self: center;
+  width: min(100%, 520px);
 }
 
 .phone:has(.landing-logo) > main > .text-secondary {
+  margin: 0 0 64px;
   text-align: center;
 }
 
@@ -400,7 +386,7 @@ h2 {
   width: min(220px, 72%);
   max-width: 220px;
   height: auto;
-  margin: 12px auto 28px;
+  margin: 12px auto 12px;
   filter: invert(1);
 }
 
@@ -473,11 +459,97 @@ h2 {
 }
 
 @media (min-width: 800px) {
-  body { padding: 24px 0 40px; }
   .phone {
-    min-height: calc(100vh - 64px);
-    border-radius: 28px;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
-    overflow: hidden;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  main > h1 {
+    font-size: 32px;
+    max-width: 22ch;
+  }
+
+  h2 {
+    font-size: 24px;
+    max-width: 32ch;
+  }
+
+  .hero {
+    height: min(42vh, 420px);
+  }
+
+  .hero.collage {
+    height: min(50vh, 500px);
+  }
+
+  .stack {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .stack .card + .card {
+    margin-top: 0;
+  }
+
+  .players {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 28px;
+  }
+
+  .day-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 16px;
+  }
+
+  .day-block > .hero,
+  .day-block > h2,
+  .day-block > .facts,
+  .day-block > .map-link,
+  .day-block > .text-link,
+  .day-block > .group-label,
+  .day-block > .recs,
+  .day-block > .rule,
+  .day-block > .prose,
+  .day-block > .note,
+  .day-block > .card:only-of-type {
+    grid-column: 1 / -1;
+  }
+
+  .day-block > .hero,
+  .day-block > h2,
+  .day-block > .facts,
+  .day-block > .card,
+  .day-block > .map-link,
+  .day-block > .text-link,
+  .day-block > .group-label {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .day-block > h2 {
+    margin-top: 12px;
+  }
+
+  .day-block .card + .card {
+    margin-top: 0;
+  }
+
+  .rule,
+  .prose,
+  .note {
+    max-width: 42rem;
+  }
+
+  .card p,
+  .fact,
+  .recs li,
+  .rule p {
+    font-size: 12px;
+  }
+
+  .countdown-value {
+    font-size: 40px;
   }
 }
