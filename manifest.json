@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "Bend 27",
+  "short_name": "Bend 27",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#141414",
+  "theme_color": "#141414",
+  "icons": [
+    {
+      "src": "images/App logo.png",
+      "sizes": "500x500",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

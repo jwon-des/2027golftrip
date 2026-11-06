@@ -1,29 +1,43 @@
 (function () {
   var standalone = window.navigator.standalone;
+  if (!standalone && window.matchMedia) {
+    standalone = window.matchMedia("(display-mode: standalone)").matches;
+  }
   if (!standalone) return;
 
-  document.addEventListener("click", function (event) {
-    if (event.defaultPrevented || event.button !== 0) return;
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  var navigating = false;
+
+  function sameOriginUrl(event) {
+    if (event.defaultPrevented) return null;
+    if (typeof event.button === "number" && event.button !== 0) return null;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return null;
 
     var link = event.target.closest("a");
-    if (!link || link.hasAttribute("download")) return;
-    if (link.target && link.target !== "_self") return;
+    if (!link || link.hasAttribute("download")) return null;
+    if (link.target && link.target !== "_self") return null;
 
     var href = link.getAttribute("href");
-    if (!href || href.charAt(0) === "#") return;
+    if (!href || href.charAt(0) === "#") return null;
 
     var url;
     try {
       url = new URL(link.href, window.location.href);
     } catch (error) {
-      return;
+      return null;
     }
-    if (url.origin !== window.location.origin) return;
+    if (url.origin !== window.location.origin) return null;
+    return url.href;
+  }
 
+  function stayInApp(event) {
+    var href = sameOriginUrl(event);
+    if (!href || navigating) return;
     event.preventDefault();
-    window.location.href = url.href;
-  }, true);
+    navigating = true;
+    window.location.assign(href);
+  }
+
+  document.addEventListener("click", stayInApp, true);
 })();
 
 (function () {
