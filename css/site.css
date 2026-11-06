@@ -287,18 +287,38 @@ h2 {
   white-space: nowrap;
 }
 
-.players { display: grid; gap: 8px; margin-top: 8px; }
+.players {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin: 8px 0 0;
+  list-style: none;
+}
 
 .player {
   display: flex;
-  justify-content: space-between;
-  gap: 16px;
+  align-items: baseline;
+  gap: 8px;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
-.hcp { color: var(--green); }
+.player-line {
+  flex: 1;
+  min-width: 16px;
+  border-bottom: 1px dashed var(--line);
+  transform: translateY(-3px);
+}
+
+.hcp {
+  flex-shrink: 0;
+  color: var(--green);
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+}
 
 .rule { margin-top: 22px; }
 
@@ -576,11 +596,6 @@ h2 {
 
   .stack .card + .card {
     margin-top: 0;
-  }
-
-  .players {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 28px;
   }
 
   .day-block {
