@@ -326,7 +326,8 @@ h2 {
 .rule ol li + li { margin-top: 8px; }
 
 .rule ol strong,
-.rule p .lead { color: var(--text); font-weight: 600; }
+.rule p .lead,
+.rule p strong { color: var(--text); font-weight: 600; }
 
 .fold + .fold {
   margin-top: 22px;
@@ -425,6 +426,8 @@ h2 {
   font-weight: 600;
   line-height: 1.45;
 }
+
+.recs strong { color: var(--text); font-weight: 600; }
 
 .map-link {
   display: block;
