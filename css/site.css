@@ -164,7 +164,7 @@ h2 {
 .card {
   background: var(--card);
   border-radius: var(--radius);
-  padding: 12px;
+  padding: 16px;
   overflow: hidden;
 }
 
@@ -299,7 +299,7 @@ h2 {
   display: flex;
   align-items: baseline;
   gap: 8px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -316,7 +316,7 @@ h2 {
   color: var(--green);
   font-family: var(--mono);
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
