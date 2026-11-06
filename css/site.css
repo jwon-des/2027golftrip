@@ -124,7 +124,7 @@ a { color: inherit; }
   max-width: 40rem;
   color: var(--text);
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
 }
@@ -170,7 +170,7 @@ h2 {
 
 .card h3 {
   color: var(--label);
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.02em;
 }
 
@@ -184,7 +184,7 @@ h2 {
   margin-top: 6px;
   color: var(--text);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
 }
@@ -260,7 +260,7 @@ h2 {
   align-items: baseline;
   gap: 8px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -324,7 +324,7 @@ h2 {
 
 .rule h3 {
   color: var(--label);
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.02em;
 }
 
@@ -334,7 +334,7 @@ h2 {
   margin-top: 8px;
   color: var(--text-secondary);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
 }
@@ -431,7 +431,7 @@ h2 {
   margin-top: 14px;
   color: var(--label);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -442,7 +442,7 @@ h2 {
   margin: 4px 0;
   color: var(--text-secondary);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.45;
 }
@@ -461,7 +461,7 @@ h2 {
     #243028;
   color: var(--label);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -648,7 +648,7 @@ h2 {
   .fact,
   .recs li,
   .rule p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .countdown-value {
