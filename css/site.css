@@ -221,35 +221,6 @@ h2 {
     #1c2418;
 }
 
-.hero.collage {
-  height: 380px;
-  background: #111;
-}
-
-.hero-collage {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  gap: 3px;
-}
-
-.collage-house .hero-collage {
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr;
-}
-
-.collage-town .hero-collage {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-
-.hero-collage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .hero-photo {
   position: absolute;
   inset: 0;
@@ -258,8 +229,7 @@ h2 {
   object-fit: cover;
 }
 
-.hero:has(.hero-photo)::after,
-.hero.collage::after {
+.hero:has(.hero-photo)::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -353,6 +323,81 @@ h2 {
 }
 
 .rule ol { padding-left: 18px; }
+
+.rule .recs { margin-top: 8px; }
+
+.rule ol li + li { margin-top: 8px; }
+
+.rule ol strong,
+.rule p .lead { color: var(--text); font-weight: 600; }
+
+.fold + .fold {
+  margin-top: 22px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.fold,
+.fold summary {
+  width: 100%;
+}
+
+.fold summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 18px 0 14px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.fold summary::-webkit-details-marker,
+.fold summary::marker {
+  display: none;
+  content: "";
+}
+
+.fold summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--text);
+  border-bottom: 2px solid var(--text);
+  transform: rotate(45deg);
+}
+
+.fold[open] summary::after {
+  transform: rotate(-135deg);
+}
+
+.fold summary:focus-visible {
+  outline: 2px solid var(--label);
+  outline-offset: 4px;
+}
+
+.rule a {
+  color: var(--label);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.app-link {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.app-link img {
+  display: block;
+  width: 72px;
+  height: auto;
+  border-radius: 16px;
+}
 
 .group-label {
   margin: 14px 0 4px;
@@ -515,12 +560,13 @@ h2 {
     max-width: 32ch;
   }
 
-  .hero {
-    height: min(42vh, 420px);
+  .fold summary {
+    font-size: 24px;
+    max-width: none;
   }
 
-  .hero.collage {
-    height: min(50vh, 500px);
+  .hero {
+    height: min(42vh, 420px);
   }
 
   .stack {
