@@ -215,10 +215,7 @@ h2 {
   margin: 0 0 18px;
   border-radius: 16px;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.45)),
-    radial-gradient(120% 80% at 80% 20%, rgba(94, 218, 63, 0.35), transparent 55%),
-    #1c2418;
+  background: #111;
 }
 
 .hero-photo {
