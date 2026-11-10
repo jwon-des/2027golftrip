@@ -307,13 +307,16 @@ h2 {
   padding: 16px 4px 14px;
   overflow: hidden;
   text-align: center;
-  font-size: clamp(10px, 3.1vw, 13px);
+  font-size: clamp(10px, 3.1vw, 12px);
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.2;
 }
 
 .player-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 100%;
 }
 
@@ -322,7 +325,7 @@ h2 {
   color: var(--green);
   font-family: var(--mono);
   font-weight: 600;
-  font-size: clamp(10px, 3.1vw, 13px);
+  font-size: clamp(10px, 3.1vw, 12px);
   white-space: nowrap;
 }
 
@@ -574,6 +577,11 @@ h2 {
   .phone {
     padding-left: 28px;
     padding-right: 28px;
+  }
+
+  .player-name {
+    flex-direction: row;
+    column-gap: 0.3em;
   }
 
   main > h1 {
