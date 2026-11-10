@@ -289,34 +289,40 @@ h2 {
 
 .players {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
-  margin: 8px 0 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .player {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
-  font-size: 14px;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px 4px 14px;
+  overflow: hidden;
+  text-align: center;
+  font-size: clamp(10px, 3.1vw, 13px);
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
 }
 
-.player-line {
-  flex: 1;
-  min-width: 16px;
-  border-bottom: 1px dashed var(--line);
-  transform: translateY(-3px);
+.player-name {
+  max-width: 100%;
 }
 
 .hcp {
-  flex-shrink: 0;
+  margin-top: auto;
   color: var(--green);
   font-family: var(--mono);
   font-weight: 600;
-  font-size: 14px;
+  font-size: clamp(10px, 3.1vw, 13px);
   white-space: nowrap;
 }
 
