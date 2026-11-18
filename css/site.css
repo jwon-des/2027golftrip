@@ -665,7 +665,7 @@ h2 {
   .rule,
   .prose,
   .note {
-    max-width: 42rem;
+    max-width: none;
   }
 
   .card p,
